@@ -1,16 +1,15 @@
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
-                String str = "level";
-                String rev = "";
-
-                for (int i = str.length()-1; i >= 0; i--) {
-                    rev += str.charAt(i);
+                String str = "radar";
+                char[] ch = str.toCharArray();
+                boolean isPalindrome = true;
+                for (int i = 0; i < ch.length / 2; i++) {
+                    if (ch[i] != ch[ch.length - 1 - i]) {
+                        isPalindrome = false;
+                        break;
+                    }
                 }
-                if (str.equals(rev))
-                    System.out.println("Palindrome");
-                else
-                    System.out.println("Not Palindrome");
+                System.out.println("Is Palindrome: " + isPalindrome);
             }
         }
-    }
